@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{516965DC-B2D0-4E19-B2F4-028DD1C679A8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BitchPlease/Models/Language.cs">
+    <Files>
+      <File FileName="BitchPlease/Program.cs" Line="13" Column="6" />
+      <File FileName="BitchPlease/Startup.cs" Line="34" Column="10" />
+      <File FileName="BitchPlease/appsettings.json" Line="1" Column="1" />
+      <File FileName="BitchPlease/Models/User.cs" Line="26" Column="31" />
+      <File FileName="BitchPlease/DAL/DatabaseContext.cs" Line="27" Column="1" />
+      <File FileName="BitchPlease/Models/Language.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BitchPlease" expanded="True">
+            <Node name="BitchPlease" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="DAL" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Language.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BitchPlease PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

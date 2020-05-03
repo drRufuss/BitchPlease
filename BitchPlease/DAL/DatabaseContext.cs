@@ -13,7 +13,21 @@ namespace BitchPlease.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                .Property(b => b.CreateDate)
+                .HasDefaultValueSql("getdate()");
 
+            modelBuilder.Entity<User>()
+                .Property(b => b.IsAdmin)
+                .HasDefaultValue(false);
+
+            modelBuilder.Entity<User>()
+                .Property(b => b.IsBlocked)
+                .HasDefaultValue(false);
+
+            modelBuilder.Entity<User>()
+                .Property(b => b.IsVerified)
+                .HasDefaultValue(false);
         }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) 
