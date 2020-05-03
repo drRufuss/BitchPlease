@@ -10,12 +10,13 @@ namespace BitchPlease.DAL
     public class DatabaseContext : DbContext
     {
         public DbSet<User> User { get; set; }
+        public DbSet<Language> Language { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
                 .Property(b => b.CreateDate)
-                .HasDefaultValueSql("getdate()");
+                .HasDefaultValueSql("NOW()");
 
             modelBuilder.Entity<User>()
                 .Property(b => b.IsAdmin)

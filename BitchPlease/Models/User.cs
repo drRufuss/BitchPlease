@@ -8,7 +8,7 @@ namespace BitchPlease.Models
     public class User
     {
         public long Id { get; set; }
-        [Required, Column(TypeName = "nvarchar(50)")]
+        [Required, Column(TypeName = "varchar(50)")]
         public string Name { get; set; }
         [Required, Column(TypeName = "varchar(50)")]
         public string Email { get; set; }
@@ -21,7 +21,7 @@ namespace BitchPlease.Models
         public int FacebookId { get; set; }        
         public bool IsAdmin { get; set; }
         public bool IsBlocked { get; set; }
-        [Column(TypeName = "tinyint")]
+        [Column(TypeName = "smallint")]
         public int Gender { get; set; }
         public int IsVerified { get; set; }
         public int LanguageId { get; set; }
