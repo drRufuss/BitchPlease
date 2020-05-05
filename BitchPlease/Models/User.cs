@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,11 +7,11 @@ namespace BitchPlease.Models
     public class User
     {
         public long Id { get; set; }
-        [Required, Column(TypeName = "varchar(50)")]
+        [Required]
         public string Name { get; set; }
-        [Required, Column(TypeName = "varchar(50)")]
+        [Required]
         public string Email { get; set; }
-        [Required, Column(TypeName = "varchar(100)")]
+        [Required]
         public string Password { get; set; }
         [Required]
         public DateTime CreateDate { get; set; }
