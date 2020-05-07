@@ -1,5 +1,7 @@
 
-BitchPlease/bin/Debug/
+BitchPlease/bin/
 
 BitchPlease/obj/
+
 BitchPlease/Migrations/
+.vs/BitchPlease/v16/.suo
