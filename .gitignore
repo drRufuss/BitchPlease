@@ -3,7 +3,5 @@ BitchPlease/bin/
 
 BitchPlease/obj/
 
-BitchPlease/Migrations/
+BitchPlease/Migrations/*
 .vs/
-
-BitchPlease/BitchPlease.csproj
