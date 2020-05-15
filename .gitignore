@@ -4,4 +4,6 @@ BitchPlease/bin/
 BitchPlease/obj/
 
 BitchPlease/Migrations/
-.vs/BitchPlease/v16/.suo
+.vs/
+
+BitchPlease/BitchPlease.csproj

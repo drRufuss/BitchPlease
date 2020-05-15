@@ -71,14 +71,14 @@ namespace BitchPlease
 
             });
 
-            UpdateDatabase(app);
+            //UpdateDatabase(app);
         }
 
         private static void UpdateDatabase(IApplicationBuilder app)
         {
             using (var serviceScope = app.ApplicationServices
-                .GetRequiredService<IServiceScopeFactory>()
-                .CreateScope())
+            .GetRequiredService<IServiceScopeFactory>()
+            .CreateScope())
             {
                 using (var context = serviceScope.ServiceProvider.GetService<DatabaseContext>())
                 {

@@ -1,40 +1,38 @@
-version: '3.4'
-
-networks:
-  dockerapi-dev:
-    driver: bridge 
+version: '2.1'
 
 services:
+
+  postgres_image:
+    image: postgres:latest
+    restart: always
+    ports:
+     - 5433:5432
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "hortex"
+      POSTGRES_DB: "BitchPlease"
+    networks:
+     - mynetwork
+    volumes:
+     - pgdata:/var/lib/postgresql/data
+
   dockerapi:
     image: dockerapi:latest
-    depends_on:
-      - "postgres_image"
+    ports:
+      - "5001:80"
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "8000:80"     
-    environment:
-      DB_CONNECTION_STRING: "host=postgres_image;port=5432;database=BitchPlease;username=bloguser;password=bloguser"
+    links:
+      - postgres_image
+    depends_on:
+      - "postgres_image"
     networks:
-      - dockerapi-dev  
+      - mynetwork  
   
-  postgres_image:
-    image: postgres:latest
-    ports:
-      - "5432"
-    restart: always
-    volumes:
-      - db_volume:/var/lib/postgresql/data
-      - ./dbscripts/seed.sql :/docker-entrypoint-initdb.d/seed.sql
-    environment:
-      POSTGRES_USER: "bloguser"
-      POSTGRES_PASSWORD: "bloguser"
-      POSTGRES_DB: "BitchPlease"
-    networks:
-      - dockerapi-dev
 volumes:
-  db_volume:
-         
-    
-     
+  pgdata:
+
+networks:
+  mynetwork:
+    driver: bridge 
