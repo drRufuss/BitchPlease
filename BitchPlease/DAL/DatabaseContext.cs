@@ -11,29 +11,21 @@ namespace BitchPlease.DAL
     {
         public DbSet<User> User { get; set; }
         public DbSet<Language> Language { get; set; }
+        public DbSet<Language> Group { get; set; }
+        public DbSet<UserGroup> UserGroup { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .Property(b => b.CreateDate)
-                .HasDefaultValueSql("NOW()");
-
-            modelBuilder.Entity<User>()
-                .Property(b => b.IsAdmin)
-                .HasDefaultValue(false);
-
-            modelBuilder.Entity<User>()
-                .Property(b => b.IsBlocked)
-                .HasDefaultValue(false);
-
-            modelBuilder.Entity<User>()
-                .Property(b => b.IsVerified)
-                .HasDefaultValue(false);
+            Models.User.ModelCreating(modelBuilder);
+            Models.Group.ModelCreating(modelBuilder);
+            Models.UserGroup.ModelCreating(modelBuilder);
         }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) 
             : base(options)
         {
         }
+
+        public DbSet<BitchPlease.Models.Group> Group_1 { get; set; }
     }
 }
