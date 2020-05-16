@@ -23,16 +23,16 @@ namespace BitchPlease.Controllers
 
         // GET: api/Groups
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Group>>> GetGroup_1()
+        public async Task<ActionResult<IEnumerable<Group>>> GetGroup()
         {
-            return await _context.Group_1.ToListAsync();
+            return await _context.Group.ToListAsync();
         }
 
         // GET: api/Groups/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Group>> GetGroup(long id)
         {
-            var @group = await _context.Group_1.FindAsync(id);
+            var @group = await _context.Group.FindAsync(id);
 
             if (@group == null)
             {
@@ -80,7 +80,7 @@ namespace BitchPlease.Controllers
         [HttpPost]
         public async Task<ActionResult<Group>> PostGroup(Group @group)
         {
-            _context.Group_1.Add(@group);
+            _context.Group.Add(@group);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetGroup", new { id = @group.Id }, @group);
@@ -90,13 +90,13 @@ namespace BitchPlease.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Group>> DeleteGroup(long id)
         {
-            var @group = await _context.Group_1.FindAsync(id);
+            var @group = await _context.Group.FindAsync(id);
             if (@group == null)
             {
                 return NotFound();
             }
 
-            _context.Group_1.Remove(@group);
+            _context.Group.Remove(@group);
             await _context.SaveChangesAsync();
 
             return @group;
@@ -104,7 +104,7 @@ namespace BitchPlease.Controllers
 
         private bool GroupExists(long id)
         {
-            return _context.Group_1.Any(e => e.Id == id);
+            return _context.Group.Any(e => e.Id == id);
         }
     }
 }

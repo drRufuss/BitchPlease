@@ -26,18 +26,5 @@ namespace BitchPlease.Models
         [ForeignKey("UpdatedBy")]
         public User UserUpdatedBy { get; set; }
         public IList<UserGroup> UserGroups { get; set; }
-
-
-        public static void ModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Group>()
-                .Property(b => b.CreateDate)
-                .HasDefaultValueSql("NOW()");
-
-            modelBuilder.Entity<Group>()
-                .Property(b => b.Active)
-                .ValueGeneratedNever()
-                .HasDefaultValue(true);
-        }
     }
 }

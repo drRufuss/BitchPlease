@@ -13,11 +13,7 @@ namespace BitchPlease.Models
         public long GroupId { get; set; }
         public Group Group { get; set; }
 
-
-        public static void ModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<UserGroup>()
-                .HasKey(ug => new { ug.UserId, ug.GroupId });
-        }
+        public bool Admin { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

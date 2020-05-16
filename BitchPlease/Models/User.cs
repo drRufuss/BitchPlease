@@ -30,24 +30,5 @@ namespace BitchPlease.Models
 
         public Language Language { get; set; }
         public IList<UserGroup> UserGroups { get; set; }
-
-        public static void ModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>()
-                .Property(b => b.CreateDate)
-                .HasDefaultValueSql("NOW()");
-
-            modelBuilder.Entity<User>()
-                .Property(b => b.Admin)
-                .HasDefaultValue(false);
-
-            modelBuilder.Entity<User>()
-                .Property(b => b.Blocked)
-                .HasDefaultValue(false);
-
-            modelBuilder.Entity<User>()
-                .Property(b => b.Verified)
-                .HasDefaultValue(false);
-        }
     }
 }
