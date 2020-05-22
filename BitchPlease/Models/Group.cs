@@ -9,22 +9,13 @@ namespace BitchPlease.Models
     public class Group
     {
         public long Id { get; set; }
-        [Required]
         public string Name { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
-        [Required]
-        [ForeignKey("User")]
         public long CreatedBy { get; set; }
-        [ForeignKey("User")]
+        public User CreatedByUser { get; set; }
         public long UpdatedBy { get; set; }
+        public User UpdatedByUser { get; set; }
         public bool Active { get; set; }
-
-
-        [ForeignKey("CreatedBy")]
-        public User UserCreatedBy { get; set; }
-        [ForeignKey("UpdatedBy")]
-        public User UserUpdatedBy { get; set; }
-        public IList<UserGroup> UserGroups { get; set; }
     }
 }

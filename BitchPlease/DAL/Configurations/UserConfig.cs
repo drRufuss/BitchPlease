@@ -19,6 +19,9 @@ namespace BitchPlease.DAL.Configurations
 
             entity.Property(b => b.Verified)
                 .HasDefaultValue(false);
+
+            entity.Property(b => b.Gender)
+                .HasDefaultValue(0);
         }
     }
 }
