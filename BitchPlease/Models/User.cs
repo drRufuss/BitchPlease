@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace BitchPlease.Models
 {
@@ -12,7 +11,9 @@ namespace BitchPlease.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public Language Language { get; set; }
+        public int LanguageId { get; set; }
+        [JsonIgnore]
+        public virtual Language Language { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime? UpdateDate { get; set; }
         public DateTime? LastLoginDate { get; set; }
@@ -23,7 +24,9 @@ namespace BitchPlease.Models
         public int Gender { get; set; }
         public int Verified { get; set; }
 
-        public ICollection<Group> CreatedGroups { get; set; }
-        public ICollection<Group> UpdatedGroups { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Group> CreatedGroups { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Group> UpdatedGroups { get; set; }
     }
 }

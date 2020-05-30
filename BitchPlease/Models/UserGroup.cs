@@ -1,16 +1,16 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace BitchPlease.Models
 {
     public class UserGroup
     {
         public long UserId { get; set; }
-        public User User { get; set; }
+        [JsonIgnore]
+        public virtual User User { get; set; }
         public long GroupId { get; set; }
-        public Group Group { get; set; }
+        [JsonIgnore]
+        public virtual Group Group { get; set; }
         public bool Admin { get; set; }
         public DateTime CreateDate { get; set; }
     }
